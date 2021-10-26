@@ -71,3 +71,6 @@ export const HiglightCards = styled.ScrollView.attrs({
   margin-top: ${RFPercentage(20)}px;
   position: absolute;
 `;
+
+export const Transactions = styled.Text``;
+export const Title = styled.Text``;

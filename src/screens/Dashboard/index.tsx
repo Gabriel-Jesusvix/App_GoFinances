@@ -12,6 +12,8 @@ import {
   UserWrapper,
   Icon,
   HiglightCards,
+  Transactions,
+  Title,
 } from "./styles";
 
 export function Dashboard() {
@@ -54,6 +56,10 @@ export function Dashboard() {
           lastTransaction="01 à 16 de abril"
         />
       </HiglightCards>
+
+      <Transactions>
+        <Title>Listagem</Title>
+      </Transactions>
     </Container>
   );
 }
