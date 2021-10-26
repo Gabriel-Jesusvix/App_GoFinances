@@ -1,4 +1,6 @@
 import React from "react";
+
+import { HiglightCard } from "../../components/HiglightCard";
 import {
   Container,
   Header,
@@ -9,6 +11,7 @@ import {
   UserName,
   UserWrapper,
   Icon,
+  HiglightCards,
 } from "./styles";
 
 export function Dashboard() {
@@ -31,6 +34,11 @@ export function Dashboard() {
           <Icon name="power" />
         </UserWrapper>
       </Header>
+      <HiglightCards>
+        <HiglightCard />
+        <HiglightCard />
+        <HiglightCard />
+      </HiglightCards>
     </Container>
   );
 }
