@@ -1,6 +1,4 @@
 import React from "react";
-import {} from "react-native";
-
 import {
   Container,
   Header,
@@ -10,6 +8,7 @@ import {
   UserGreenting,
   UserName,
   UserWrapper,
+  Icon,
 } from "./styles";
 
 export function Dashboard() {
@@ -28,6 +27,8 @@ export function Dashboard() {
               <UserName>Gabriel J.</UserName>
             </User>
           </UserInfo>
+
+          <Icon name="power" />
         </UserWrapper>
       </Header>
     </Container>
