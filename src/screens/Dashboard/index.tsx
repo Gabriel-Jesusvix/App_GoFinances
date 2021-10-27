@@ -1,6 +1,9 @@
 import React from "react";
 
 import { HiglightCard } from "../../components/HiglightCard";
+import { TransactionCard } from "../../components/TransactionCard";
+import { DataListProps } from "../../interfaces/TransactionCardDTO";
+
 import {
   Container,
   Header,
@@ -14,9 +17,45 @@ import {
   HiglightCards,
   Transactions,
   Title,
+  TransactionList,
 } from "./styles";
 
 export function Dashboard() {
+  const data: DataListProps[] = [
+    {
+      id: "1",
+      type: "positive",
+      title: "Densevolvimento Mobile",
+      amount: "R$ 12.000,00",
+      category: {
+        name: "Vendas",
+        icon: "dollar-sign",
+      },
+      date: "13/04/2020",
+    },
+    {
+      id: "2",
+      type: "negative",
+      title: "BK",
+      amount: "R$ 39,90",
+      category: {
+        name: "Alimentação",
+        icon: "coffee",
+      },
+      date: "10/04/2020",
+    },
+    {
+      id: "3",
+      type: "negative",
+      title: "Alugel",
+      amount: "R$ 500,00",
+      category: {
+        name: "Vendas",
+        icon: "shopping-bag",
+      },
+      date: "13/04/2020",
+    },
+  ];
   return (
     <Container>
       <Header>
@@ -59,6 +98,11 @@ export function Dashboard() {
 
       <Transactions>
         <Title>Listagem</Title>
+        <TransactionList
+          data={data}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => <TransactionCard data={item} />}
+        />
       </Transactions>
     </Container>
   );
