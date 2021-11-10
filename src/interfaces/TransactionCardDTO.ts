@@ -5,9 +5,9 @@ export interface CategoryPropsDTO {
 
 export interface TransactionCardDTO {
   type: "positive" | "negative";
-  title: string;
+  name: string;
   amount: string;
-  category: CategoryPropsDTO;
+  category: string;
   date: string;
 }
 export interface Props {
