@@ -85,6 +85,7 @@ export function Register() {
       date: new Date(),
     };
     try {
+      // Define A key do async Storage
       const dataKey = "@gofinances:transactions";
 
       const data = await AsyncStorage.getItem(dataKey); // recuperando
@@ -101,6 +102,7 @@ export function Register() {
         key: "category",
         name: "Categoria",
       });
+
       navigate("Listagem");
     } catch (error) {
       console.log(error);
