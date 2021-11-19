@@ -13,7 +13,9 @@ import {
   Title,
   SignInTitle,
   Footer,
+  FooterWrapper,
 } from "./styles";
+import { SingInSocialButton } from "../../components/SingInSocialButton";
 
 export function SignIn() {
   return (
@@ -27,7 +29,12 @@ export function SignIn() {
           Faça seu login com {"\n"}uma das contas abaixo
         </SignInTitle>
       </Header>
-      <Footer></Footer>
+      <Footer>
+        <FooterWrapper>
+          <SingInSocialButton title="Entrar com Google" svg={GoogleSvgIcon} />
+          <SingInSocialButton title="Entrar com Apple" svg={AppleSvgIcon} />
+        </FooterWrapper>
+      </Footer>
     </Container>
   );
 }
