@@ -31,7 +31,9 @@ export function HiglightCard({
 
       <Footer>
         <Amount type={type}>{amount}</Amount>
-        <LastTransaction type={type}>{lastTransaction}</LastTransaction>
+        <LastTransaction type={type}>
+          {lastTransaction || "Nenhuma transação cadastrada"}
+        </LastTransaction>
       </Footer>
     </Container>
   );
