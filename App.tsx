@@ -18,6 +18,7 @@ import { AppRoutes } from "./src/routes/app.routes";
 import { AuthProvider } from "./src/hooks/auth";
 import { SignIn } from "./src/screens/SignIn";
 
+
 export default function App() {
   const [fontsLoaded] = useFonts({
     Poppins_400Regular,

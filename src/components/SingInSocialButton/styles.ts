@@ -4,8 +4,10 @@ import { RectButton } from "react-native-gesture-handler";
 
 export const Button = styled(RectButton)`
   height: ${RFValue(56)}px;
+
   background-color: ${({ theme }) => theme.colors.shape};
   border-radius: 5px;
+
   align-items: center;
   flex-direction: row;
 
@@ -26,5 +28,5 @@ export const Text = styled.Text`
   text-align: center;
 
   font-family: ${({ theme }) => theme.fonts.medium};
-  font-size: ${RFValue(16)}px;
+  font-size: ${RFValue(14)}px;
 `;
