@@ -21,19 +21,25 @@ import { useAuth } from "../../hooks/auth";
 import { AuthContext } from "../../../AuthContext";
 
 export function SignIn() {
-  // const { signInWithGoogle } = useAuth();
-  const { user } = useAuth();
-  console.log(user.name);
-  console.log(user.email);
+  const { signInWithGoogle, signInWithApple } = useAuth();
 
-  // async function handlerSignInWithGoogle() {
-  //   try {
-  //     await signInWithGoogle();
-  //   } catch (error) {
-  //     console.log(error);
-  //     Alert.alert("Não foi possível conectar a conta Google");
-  //   }
-  // }
+  async function handlerSignInWithGoogle() {
+    try {
+      await signInWithGoogle();
+    } catch (error) {
+      console.log(error);
+      Alert.alert("Não foi possível conectar a conta Google");
+    }
+  }
+  async function handlerSignInWithApple() {
+    try {
+      await signInWithApple();
+    } catch (error) {
+      console.log(error);
+      Alert.alert("Não foi possível conectar a conta Apple");
+    }
+  }
+
   return (
     <Container>
       <Header>
@@ -50,9 +56,13 @@ export function SignIn() {
           <SingInSocialButton
             title="Entrar com Google"
             svg={GoogleSvgIcon}
-            // onPress={handlerSignInWithGoogle}
+            onPress={handlerSignInWithGoogle}
           />
-          <SingInSocialButton title="Entrar com Apple" svg={AppleSvgIcon} />
+          <SingInSocialButton
+            title="Entrar com Apple"
+            svg={AppleSvgIcon}
+            onPress={handlerSignInWithApple}
+          />
         </FooterWrapper>
       </Footer>
     </Container>
