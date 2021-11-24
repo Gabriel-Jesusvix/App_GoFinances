@@ -3,8 +3,9 @@ import React, { useState, useEffect, useCallback } from "react";
 import { ActivityIndicator } from "react-native";
 
 import { useTheme } from "styled-components";
-
+import { useAuth } from "../../hooks/auth";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+
 import { useFocusEffect } from "@react-navigation/native";
 import { HiglightCard } from "../../components/HiglightCard";
 import { TransactionCard } from "../../components/TransactionCard";
@@ -38,6 +39,7 @@ interface HiglightDTO {
   total: HiglightProps;
 }
 export function Dashboard() {
+  const { signOut } = useAuth();
   const [IsLoading, setIsLoading] = useState(true);
   const [data, setData] = useState<DataListProps[]>([]);
   const [higlightData, sethiglightData] = useState<HiglightDTO>(
@@ -172,7 +174,7 @@ export function Dashboard() {
                   <UserName>Gabriel J.</UserName>
                 </User>
               </UserInfo>
-              <LogoutButton onPress={() => {}}>
+              <LogoutButton onPress={signOut}>
                 <Icon name="power" />
               </LogoutButton>
             </UserWrapper>

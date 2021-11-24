@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState } from "react";
 import { Alert } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 
@@ -21,22 +21,29 @@ import { useAuth } from "../../hooks/auth";
 import { AuthContext } from "../../../AuthContext";
 
 export function SignIn() {
+  const [isLoading, setIsLoading] = useState(false);
   const { signInWithGoogle, signInWithApple } = useAuth();
 
   async function handlerSignInWithGoogle() {
     try {
+      setIsLoading(true);
       await signInWithGoogle();
     } catch (error) {
       console.log(error);
       Alert.alert("Não foi possível conectar a conta Google");
+    } finally {
+      setIsLoading(false);
     }
   }
   async function handlerSignInWithApple() {
     try {
+      setIsLoading(true);
       await signInWithApple();
     } catch (error) {
       console.log(error);
       Alert.alert("Não foi possível conectar a conta Apple");
+    } finally {
+      setIsLoading(false);
     }
   }
 
