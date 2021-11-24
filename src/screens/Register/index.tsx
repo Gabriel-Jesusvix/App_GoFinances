@@ -7,6 +7,7 @@ import {
   ParamListBase,
 } from "@react-navigation/native";
 
+import { useAuth } from "../../hooks/auth";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import uuid from "react-native-uuid";
 
@@ -43,6 +44,7 @@ const schema = Yup.object().shape({
 });
 
 export function Register() {
+  const { user } = useAuth();
   const [transactionType, setTransactionType] = useState("");
   const [categoryModalOpen, setCategoryModalOpen] = useState(false);
   const [category, setCategory] = useState({
@@ -86,7 +88,7 @@ export function Register() {
     };
     try {
       // Define A key do async Storage
-      const dataKey = "@gofinances:transactions";
+      const dataKey = `@gofinances:transactions_user:${user.id}`;
 
       const data = await AsyncStorage.getItem(dataKey); // recuperando
       const currentData = data ? JSON.parse(data) : []; // se tem converte pra json se não devolve vetor
