@@ -5,7 +5,9 @@ import { Profile } from "../../screens/Profile";
 
 // 1 parameter name testing and 2 parameter function from test;
 test("check if show correctly user input name placeholder", () => {
-  const { debug } = render(<Profile />);
+  const { getByPlaceholderText } = render(<Profile />);
 
-  debug();
+  const inputName = getByPlaceholderText("Nome");
+
+  expect(inputName.props.placeholder).toBeTruthy();
 });

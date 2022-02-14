@@ -22,7 +22,7 @@ export const Title = styled.Text`
   color: ${({ theme }) => theme.colors.shape};
 
   text-align: center;
-
+  margin: 0px 15px;
   margin-top: 45px;
 `;
 export const SignInTitle = styled.Text`
