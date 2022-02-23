@@ -28,5 +28,6 @@ describe("Input Component", () => {
     expect(inputComponent.props.style[0].borderColor).toEqual(
       theme.colors.attention
     );
+    expect(inputComponent.props.style[0].borderWidth).toEqual(3);
   });
 });
